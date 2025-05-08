@@ -1,6 +1,7 @@
 from flask import Flask, request, jsonify, render_template
 import pickle
 import numpy as np
+import os
 
 # Load pipeline model
 with open('pipeline_model.pkl', 'rb') as file:
@@ -42,4 +43,6 @@ def predict_api():
 
 
 if __name__ == '__main__':
-    app.run(debug=True)
+    port = int(os.environ.get("PORT", 10000))  # Render default
+    app.run(host='0.0.0.0', port=port)
+
