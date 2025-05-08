@@ -1,7 +1,6 @@
 from flask import Flask, request, jsonify, render_template
 import pickle
 import numpy as np
-import os
 
 # Load pipeline model
 with open('pipeline_model.pkl', 'rb') as file:
